@@ -25,14 +25,15 @@ defmodule MeapiMocksWeb.PageController do
     conn
       |> put_status(200)
       |> json(%{productId: 50003481,
-                url: "http://192.168.10.1/super/images/Products/img_small/0075810400523s.jpg",
-                unit: "KG",
+                imageUrl: "http://192.168.10.1/super/images/Products/img_small/0075810400523s.jpg",
+                thumbnailUrl: "http://192.168.10.1/super/images/Products/img_small/0075810400523s.jpg",
+                unit: "PCE",
                 shortName: "short name",
                 longName: "XBOX One",
                 price: 9.9,
-                pesable: true,
+                pesable: false,
                 restricted: true,
-                aisle: "Jugueteria"})
+                aisle: ""})
   end
 
   def notifiy_status_change(conn, %{"orderID" => order_id,
