@@ -68,7 +68,14 @@ defmodule MeapiMocksWeb.PageController do
                             "customkey" => order_id}})
   end
 
-  def final_order(conn, _params) do
+  def final_order(conn, %{"orderId" => "111111"}) do
+    conn
+      |> put_status(400)
+      |> json(%{status: "FAILURE", message: "Product with code '7501019006388' and CatalogVersion 'chedrauiProductCatalog.Online' not found!"})
+  end
+
+  def final_order(conn, params) do
+    IO.inspect params
     conn
       |> put_status(200)
       |> json(order_response)
