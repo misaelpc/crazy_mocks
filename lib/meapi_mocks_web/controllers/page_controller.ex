@@ -68,6 +68,12 @@ defmodule MeapiMocksWeb.PageController do
                             "customkey" => order_id}})
   end
 
+  def inject_order(conn, _params) do
+    conn
+      |> put_status(200)
+      |> json(%{"status" => 1, "message" => "ok"})
+  end
+
   def final_order(conn, %{"orderId" => "111111"}) do
     conn
       |> put_status(400)

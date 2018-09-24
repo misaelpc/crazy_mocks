@@ -28,5 +28,6 @@ defmodule MeapiMocksWeb.Router do
     get "/integration/ws/meapi/v1/order/:order_id/status", PageController, :order_status
     get "/api/mercury/v1/delivery/:order_id/delivery_position", PageController, :order_position
     post "/integration/ws/meapi/v1/finalOrder", PageController, :final_order
+    post "/mercury-1.0/api/mercury/v1/delivery", PageController, :inject_order
   end
 end
